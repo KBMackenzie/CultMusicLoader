@@ -35,6 +35,7 @@ As mentioned, all you have to do is put your audio files inside of the `BepInEx/
 The track name displayed in the music menu is the name of the file minus both the extension and the `_cult` part. If your track name is too long, it'll be cut off.
 
 If you find any bugs or issues, you can contact me on Discord! `kelly betty#7936`
+
 You're encouraged you to do so! This mod is my way of testing my contributions to the API, so telling me about any bugs you find helps!
 
 ## Changelog
