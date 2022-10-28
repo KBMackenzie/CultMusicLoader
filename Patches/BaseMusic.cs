@@ -1,9 +1,9 @@
-﻿using CultMusicLoader.Menu;
-using CultMusicLoader.Sounds.Load;
-using HarmonyLib;
-using Socket.Newtonsoft.Json.Utilities.LinqBridge;
+﻿using HarmonyLib;
 using System;
+using System.Linq;
+using CultMusicLoader.Menu;
 using UnityEngine;
+using CultMusicLoader.Sounds.Load;
 
 namespace CultMusicLoader.Patches
 {

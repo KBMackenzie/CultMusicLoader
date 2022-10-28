@@ -1,12 +1,12 @@
 using BepInEx;
-using BepInEx.Bootstrap;
+using HarmonyLib;
+using System.Linq;
 using BepInEx.Logging;
+using BepInEx.Bootstrap;
 using CultMusicLoader.Menu;
 using CultMusicLoader.UI.Helpers;
-using HarmonyLib;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 
 namespace CultMusicLoader
 {

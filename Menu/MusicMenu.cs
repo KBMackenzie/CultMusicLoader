@@ -1,15 +1,9 @@
-﻿using CultMusicLoader.Patches;
-using CultMusicLoader.UI.Base;
+﻿using CultMusicLoader.UI.Base;
 using CultMusicLoader.Sounds.Load;
 using CultMusicLoader.UI.Helpers;
 using System.Collections.Generic;
 using UnityEngine;
-using System.IO;
-using System;
 using System.Collections;
-using HarmonyLib;
-using UnityEngine.UI;
-using System.Text;
 
 namespace CultMusicLoader.Menu
 {
