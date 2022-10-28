@@ -16,7 +16,7 @@ namespace CultMusicLoader
     {
         public const string PluginGuid = "kel.cotl.cultmusicloader";
         public const string PluginName = "Cult Music Loader";
-        public const string PluginVer = "1.0.0";
+        public const string PluginVer = "1.0.1";
 
         internal static ManualLogSource myLogger;
 
