@@ -175,8 +175,6 @@ namespace CultMusicLoader.Menu
             float endRotation = eulerAngles.z + 360f;
             float time = 0.0f;
 
-            FileLog.Log($"EulerZ: {eulerAngles.z}, EndRotation: {endRotation}");
-
             while (true)
             {
                 if (pauseVinyl)

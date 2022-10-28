@@ -31,11 +31,12 @@ namespace CultMusicLoader
             Logger.LogInfo($"Loaded {PluginName}!");
 
             string[] files = Menu.Helpers.FindMusicFiles();
+
+            // No patches are run if no songs are found.
             if (files == null) return;
 
             files.ToList().ForEach(x => SongList.Add(Path.GetFileName(x)));
 
-            // Only patch if songs found.
             Harmony harmony = new Harmony("kel.harmony.cultmusicloader");
             harmony.PatchAll();
 

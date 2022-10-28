@@ -18,7 +18,7 @@ namespace CultMusicLoader.Patches
 
             MusicMenu.SL = Parent.AddSoundLoader();
             
-            // Add each music loaded
+            // Add all music loaded
             foreach(string Song in Plugin.SongList)
             {
                 try
