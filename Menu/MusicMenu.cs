@@ -171,9 +171,9 @@ namespace CultMusicLoader.Menu
 
         IEnumerator VinylSpin(float duration = 3f)
         {
-            Vector3 eulerAngles = UIVinyl.transform.eulerAngles;
-            float endRotation = eulerAngles.z + 360f;
-            float time = 0.0f;
+            Vector3 startAngles = UIVinyl.transform.eulerAngles;
+            float startZ = startAngles.z;
+            float endRotation = startAngles.z + 360.0f;
 
             while (true)
             {
@@ -183,12 +183,11 @@ namespace CultMusicLoader.Menu
                     continue;
                 }
 
-                if (time >= duration) time = 0.0f;
+                if (startZ >= endRotation) startZ = 0.0f;
+                float time = Time.unscaledDeltaTime / duration;
+                startZ = Mathf.Lerp(startAngles.z, endRotation, time) % 360f;
 
-                time += Time.deltaTime;
-                float rotation = Mathf.Lerp(eulerAngles.z, endRotation, time / duration) % 360f;
-
-                UIVinyl.ChangeRotation(x:eulerAngles.x, y:eulerAngles.y, z: rotation);
+                UIVinyl.ChangeRotation(x:startAngles.x, y:startAngles.y, z: startZ);
                 yield return null;
             }
         }
