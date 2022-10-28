@@ -169,7 +169,7 @@ namespace CultMusicLoader.Menu
             obj.ChangeImageOpacity(changeOpacity);
         }
 
-        IEnumerator VinylSpin(float duration = 30f)
+        IEnumerator VinylSpin(float duration = 3f)
         {
             Vector3 eulerAngles = UIVinyl.transform.eulerAngles;
             float endRotation = eulerAngles.z + 360f;
