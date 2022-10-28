@@ -4,6 +4,7 @@ using CultMusicLoader.UI.Helpers;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 namespace CultMusicLoader.Menu
 {
@@ -11,6 +12,8 @@ namespace CultMusicLoader.Menu
     {
         GameObject musicContainer, menuBox;
         GameObject trackName, arrowLeft, arrowRight, playPause, UIVinyl;
+
+        bool isCultBase, pauseVinyl;
 
         public static SoundLoader SL;
         public static int SoundIndex;
@@ -27,16 +30,19 @@ namespace CultMusicLoader.Menu
                 { "UIVinyl" ,   Helpers.MakeSprite(Properties.Resources.UIVinyl)    },
             };
 
-        bool pauseVinyl;
-
         public override void InitializeMenu(Transform parent)
         {
-            float yPos = Plugin.hasWeaponSelector ? 200 : 1000;
+            isCultBase = SceneManager.GetActiveScene().name == "Base Biome 1";
+            if (!isCultBase) return;
+
+            int xPos = Plugin.hasWeaponSelector ? 1700 : 1900;
+            int yPos = Plugin.hasWeaponSelector ? 413 : 1000;
 
             musicContainer = UIManager.CreateUIObject(name: "MusicContainer")
                 .AttachToParent(parent)
                 .ChangeScale(x: 1f, y: 1f)
-                .ChangePosition(x: 1900, y: yPos);
+                .ChangePosition(x: xPos, y: yPos);
+            musicContainer.AddComponent<RectTransform>();
 
             CreateMenuObjects();
             CreateButtons();
@@ -163,7 +169,7 @@ namespace CultMusicLoader.Menu
             obj.ChangeImageOpacity(changeOpacity);
         }
 
-        IEnumerator VinylSpin(float duration = 3f)
+        IEnumerator VinylSpin(float duration = 30f)
         {
             Vector3 eulerAngles = UIVinyl.transform.eulerAngles;
             float endRotation = eulerAngles.z + 360f;
@@ -182,8 +188,21 @@ namespace CultMusicLoader.Menu
                 time += Time.deltaTime;
                 float rotation = Mathf.Lerp(eulerAngles.z, endRotation, time / duration) % 360f;
 
-                UIVinyl.ChangeRotation(z: rotation);
+                UIVinyl.ChangeRotation(x:eulerAngles.x, y:eulerAngles.y, z: rotation);
                 yield return null;
+            }
+        }
+
+        void Update()
+        {
+            if (!isCultBase) return;
+
+            if (Input.GetKeyDown("g"))
+            {
+                StopCurrent();
+                NextTrack();
+                PlayCurrent();
+                UpdateAfterPlay();
             }
         }
     }
