@@ -40,7 +40,7 @@ namespace CultMusicLoader
             Harmony harmony = new Harmony("kel.harmony.cultmusicloader");
             harmony.PatchAll();
 
-            UIHelpers.AddToPauseMenu<MusicMenu>();
+            UIManager.AddToPauseMenu<MusicMenu>();
 
             // Make sure the menu doesn't overlap with Weapon Selector's menu
             string weaponSelectorGUID = "kel.cotl.weaponselector";

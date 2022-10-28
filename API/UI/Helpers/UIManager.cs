@@ -3,7 +3,7 @@ using CultMusicLoader.UI.Base;
 using CultMusicLoader.UI.Patches;
 
 namespace CultMusicLoader.UI.Helpers;
-public static class UIHelpers
+public static class UIManager
 {
     // UI Layer
     static LayerMask _UILayer = LayerMask.NameToLayer("UI");

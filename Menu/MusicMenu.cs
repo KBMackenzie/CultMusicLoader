@@ -33,7 +33,7 @@ namespace CultMusicLoader.Menu
         {
             float yPos = Plugin.hasWeaponSelector ? 200 : 1000;
 
-            musicContainer = UIHelpers.CreateUIObject(name: "MusicContainer")
+            musicContainer = UIManager.CreateUIObject(name: "MusicContainer")
                 .AttachToParent(parent)
                 .ChangeScale(x: 1f, y: 1f)
                 .ChangePosition(x: 1900, y: yPos);
