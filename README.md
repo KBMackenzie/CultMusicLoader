@@ -13,6 +13,8 @@ An example of a valid name for an audio track is `Example Music_cult.mp3`.
 You can navigate through the music tracks by clicking the arrows. 
 You can also navigate through them with your **keyboard** by pressing **G**.
 
+The art being used for this mod's icon (and all the art for the music menu) was made by me!
+
 ## Installation
 This mod’s only dependency is BepInEx.
 
@@ -39,4 +41,5 @@ If you find any bugs or issues, you can contact me on Discord! `kelly betty#7936
 You're encouraged you to do so! This mod is my way of testing my contributions to the API, so telling me about any bugs you find helps!
 
 ## Changelog
+- 1.0.1 -- Clean-up!
 - 1.0.0 -- Initial upload.
