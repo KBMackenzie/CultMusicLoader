@@ -5,8 +5,7 @@ using CultMusicLoader.UI.Patches;
 namespace CultMusicLoader.UI.Helpers;
 public static class UIManager
 {
-    static LayerMask _UILayer = LayerMask.NameToLayer("UI");
-    public static LayerMask UILayer => _UILayer;
+    public static LayerMask UILayer => LayerMask.NameToLayer("UI");
 
     public static void AddToPauseMenu<T>() where T : UIMenuBase
     {

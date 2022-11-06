@@ -8,14 +8,14 @@ namespace CultMusicLoader.Sounds.Load;
 internal class SoundHandler
 {
     // Channel through which all the sound is played.
-    Channel channel;
+    private Channel channel;
 
-    Sound currentSound;
-    string currentSoundId;
+    private Sound currentSound;
+    private string currentSoundId;
     public string Id => currentSoundId;
 
     // Volume control while still in sync with Master
-    float volumeMultiplier = 1f;
+    private float volumeMultiplier = 1f;
 
     public SoundHandler(Sound sound, string id)
     {
